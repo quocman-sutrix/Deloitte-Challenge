@@ -1,6 +1,6 @@
 # Deloitte-Challenge
 
-This a small demo app for Deloitte's Code Challenge. These APIs was used to get movies list and movies detail
+This is a small demo app for Deloitte's Code Challenge. These APIs was used to get movies list and movies detail
 
 ## Build the app
 
