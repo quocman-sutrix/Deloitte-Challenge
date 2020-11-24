@@ -1,0 +1,6 @@
+framework module Pods_Deloitte_Challenge {
+  umbrella header "Pods-Deloitte Challenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
