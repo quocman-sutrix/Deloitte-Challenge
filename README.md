@@ -8,7 +8,7 @@ Clone this repository to you MAC. Navigate to project's root folder and run pod 
 ```
 pod install
 ```
-When pod installed build the app. If you want to try the app on real device. You need to install corresponding Provisioning profile and Developer certificate with App's Bundle ID.
+When pod installed build the app in iOS Simulator. If you want to try the app on real device. You need to install corresponding Provisioning profile and Developer certificate with App's Bundle ID.
 
 ## Screenshots
 <p float="left">
