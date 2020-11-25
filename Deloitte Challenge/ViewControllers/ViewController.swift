@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     lazy var movieDetailViewController: MovieDetailViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(
-            withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+            withIdentifier: MovieDetailViewController.identifier) as! MovieDetailViewController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .flipHorizontal
         return controller
@@ -33,23 +33,41 @@ class ViewController: UIViewController {
         configurateForUI()
     }
 
+    
+}
+
+//MARK: - UI Configuration
+extension ViewController {
     func configurateForUI() {
         movieListViewModel.bind = {
             self.updateMovieList()
         }
+        
+        movieListViewModel.searchFor(keyword: "mafia")
+        configureForCollection()
+        configureForTextfield()
+    }
+    
+    func configureForCollection(){
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(
-            UINib(nibName: "MovieListCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "MovieListCollectionViewCell"
+            UINib(nibName: MovieListCollectionViewCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier
         )
         collectionView.register(
-            UINib(nibName: "EmptyCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "EmptyCollectionViewCell"
+            UINib(nibName: EmptyCollectionViewCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier
         )
-        
-
+    }
+    
+    func configureForTextfield(){
         searchTextField.delegate = self
+        
+        searchTextField.attributedPlaceholder = NSAttributedString(
+            string:  Messages().typeSomething ,
+            attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)]
+        )
     }
     
     func updateMovieList() {
@@ -88,13 +106,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         
         if movieListViewModel.movieList == nil {
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "EmptyCollectionViewCell",
+                withReuseIdentifier: EmptyCollectionViewCell.identifier,
                 for: indexPath
             )  as! EmptyCollectionViewCell
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "MovieListCollectionViewCell",
+                withReuseIdentifier: MovieListCollectionViewCell.identifier,
                 for: indexPath
             )  as! MovieListCollectionViewCell
             

@@ -19,4 +19,7 @@ struct Messages {
     let urlPreparationfailed = "URL preparation failed"
     let serverNotResponding = "Server not responding"
     let apiError = "API Error"
+    
+    
+    let typeSomething = "Type something here..."
 }

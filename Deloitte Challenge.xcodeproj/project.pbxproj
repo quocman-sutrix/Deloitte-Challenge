@@ -32,6 +32,7 @@
 		27BE0DED256CC60A007736BC /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BE0DEB256CC60A007736BC /* EmptyCollectionViewCell.xib */; };
 		27C26674256BB235009F1992 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C26672256BB235009F1992 /* MovieListCollectionViewCell.swift */; };
 		27C26675256BB235009F1992 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C26673256BB235009F1992 /* MovieListCollectionViewCell.xib */; };
+		27DAA439256E3FEE00BE5650 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAA438256E3FEE00BE5650 /* Identifier.swift */; };
 		27F4EA7D256CDC5D00F9C5F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4EA7C256CDC5D00F9C5F7 /* UIView.swift */; };
 		27F97578256B9E5F0004D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F97577256B9E5F0004D760 /* AppDelegate.swift */; };
 		27F9757A256B9E5F0004D760 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F97579256B9E5F0004D760 /* SceneDelegate.swift */; };
@@ -78,6 +79,7 @@
 		27BE0DEB256CC60A007736BC /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		27C26672256BB235009F1992 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		27C26673256BB235009F1992 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
+		27DAA438256E3FEE00BE5650 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		27F4EA7C256CDC5D00F9C5F7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		27F97574256B9E5F0004D760 /* Deloitte Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deloitte Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F97577256B9E5F0004D760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				27BE0DB4256BB597007736BC /* UIImageView.swift */,
 				27BE0DBA256BE9AF007736BC /* Encodable.swift */,
 				27F4EA7C256CDC5D00F9C5F7 /* UIView.swift */,
+				27DAA438256E3FEE00BE5650 /* Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				27F97578256B9E5F0004D760 /* AppDelegate.swift in Sources */,
 				27F9759D256BA2600004D760 /* Reachability.swift in Sources */,
 				27C26674256BB235009F1992 /* MovieListCollectionViewCell.swift in Sources */,
+				27DAA439256E3FEE00BE5650 /* Identifier.swift in Sources */,
 				27BE0DBB256BE9AF007736BC /* Encodable.swift in Sources */,
 				27F9757A256B9E5F0004D760 /* SceneDelegate.swift in Sources */,
 				27F9759F256BA2600004D760 /* NetworkRequest.swift in Sources */,

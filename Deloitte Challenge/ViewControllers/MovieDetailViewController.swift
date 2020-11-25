@@ -11,6 +11,7 @@ import UIKit
 class MovieDetailViewController: UIViewController {
     
     //MARK: - IBOutlet declerations
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
@@ -35,17 +36,19 @@ class MovieDetailViewController: UIViewController {
         configurateForUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getMovieDetail()
         configurateForUI()
         
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
     }
+    
     //MARK: - Other methods
     func configurateForUI() {
         movieDetailViewModel.bind = {
