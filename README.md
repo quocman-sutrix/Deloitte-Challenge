@@ -18,7 +18,7 @@ When pod installed build the app in iOS Simulator. If you want to try the app on
 
 ## Screenshots
 <p float="left">
-    <img src="https://github.com/quocman-sutrix/Deloitte-Challenge/blob/master/screenshots/deloitte-2.png?raw=true" width="250" />
+    <img src="https://github.com/quocman-sutrix/Deloitte-Challenge/blob/master/screenshots/deloitte-3.png?raw=true" width="250" />
     <img src="https://github.com/quocman-sutrix/Deloitte-Challenge/blob/master/screenshots/deloitte-2.png?raw=true" width="250" />
     <img src="https://github.com/quocman-sutrix/Deloitte-Challenge/blob/master/screenshots/deloitte-1.png?raw=true" width="250" />
 </p>
