@@ -21,13 +21,9 @@ class MovieListViewModel : NSObject {
     var isLastPage = false
     var keyword = ""
     public func searchFor(keyword:String) {
-        
-        //Only call when the keyword length have at least 5 characters to prevent spamming the API
-        if keyword.count > 4 {
-            page = 1
-            self.keyword = keyword
-            getMovies()
-        }
+        page = 1
+        self.keyword = keyword
+        getMovies()
     }
     
     public func loadMore(){
