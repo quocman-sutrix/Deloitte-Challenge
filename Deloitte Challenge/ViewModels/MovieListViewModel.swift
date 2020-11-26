@@ -23,16 +23,6 @@ class MovieListViewModel : NSObject {
     public func searchFor(keyword:String) {
         page = 1
         self.keyword = keyword
-        getMovies()
-    }
-    
-    public func loadMore(){
-        guard !self.isLastPage else { return }
-        page += 1
-        getMovies()
-    }
-    
-    private func getMovies(){
         
         pendingRequestWorkItem?.cancel()
         
@@ -44,6 +34,13 @@ class MovieListViewModel : NSObject {
                                       execute: requestWorkItem)
         
     }
+    
+    public func loadMore(){
+        guard !self.isLastPage else { return }
+        page += 1
+        getMoviesRequest()
+    }
+    
     
     private func getMoviesRequest(){
         APIManager.shared.getMovieList(self.keyword, page: self.page) { (result, errorMessage, data) in
