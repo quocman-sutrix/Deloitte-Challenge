@@ -14,9 +14,10 @@ class MovieListViewModel : NSObject {
             self.bind()
         }
     }
+    
+    private var pendingRequestWorkItem: DispatchWorkItem?
     var bind : (() -> ()) = {}
     var page = 1
-    var isLoading = false
     var isLastPage = false
     var keyword = ""
     public func searchFor(keyword:String) {
@@ -30,15 +31,26 @@ class MovieListViewModel : NSObject {
     }
     
     public func loadMore(){
-        guard !self.isLoading, !self.isLastPage else { return }
+        guard !self.isLastPage else { return }
         page += 1
         getMovies()
     }
     
     private func getMovies(){
-        self.isLoading = true
+        
+        pendingRequestWorkItem?.cancel()
+        
+        let requestWorkItem = DispatchWorkItem { [weak self] in
+            self?.getMoviesRequest()
+        }
+        pendingRequestWorkItem = requestWorkItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500),
+                                      execute: requestWorkItem)
+        
+    }
+    
+    private func getMoviesRequest(){
         APIManager.shared.getMovieList(self.keyword, page: self.page) { (result, errorMessage, data) in
-            self.isLoading = false
             if result {
                 if self.page == 1 {
                     self.movieList = data?.Search
